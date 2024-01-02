@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Pedigree Function Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+        body, button{
+            font-family: "Quicksand",sans-serif;
+        }
+    #dpff{
+      margin-left: 37%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+    </div>
+    <div>
+      <a class="nav-item" href="/home" id="home">
+        <h4>Home</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/about" class="nav-item" id="about">
+        <h4>About</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/resources" class="nav-item" id="resources">
+        <h4>Resources</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/contact" class="nav-item" id="contact">
+        <h4>Contact Us</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/disclaimer" class="nav-item" id="disclaimer">
+        <h4>Disclaimer</h4>
+      </a>
+    </div>
+  </div>
+  <div id="dpff" class="bmi-form-container">
+    <h2>Diabetes Pedigree Function Calculator</h2>
+    <div class="input-group">
+      <label for="firstDegree">Number of first-degree relatives with diabetes:</label><br><br>
+      <input type="number" id="firstDegree" placeholder="Enter number" min="0">
+    </div>
+    <div class="input-group">
+      <label for="secondDegree">Number of second-degree relatives with diabetes:</label><br><br>
+      <input type="number" id="secondDegree" placeholder="Enter number" min="0">
+    </div>
+    <button onclick="calculateDPF()">Calculate DPF</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculateDPF() {
+      let firstDegreeRelatives = document.getElementById('firstDegree').value;
+      let secondDegreeRelatives = document.getElementById('secondDegree').value;
+
+      firstDegreeRelatives = Number(firstDegreeRelatives);
+      secondDegreeRelatives = Number(secondDegreeRelatives);
+
+      let dpf = (firstDegreeRelatives * 1.0 + secondDegreeRelatives * 0.5) * 0.1;
+
+      document.getElementById('result').textContent = 'Calculated Diabetes Pedigree Function (DPF): ' + dpf.toFixed(3);
+    }
+  </script>
+</body>
+
+</html>

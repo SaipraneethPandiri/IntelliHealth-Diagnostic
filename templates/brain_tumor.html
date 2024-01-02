@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Brain tumor detection</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+
+    }
+
+    .upload-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      border-color: white;
+      margin-left: 230px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .upload-button:hover {
+      background-color: #000000;
+      color: #ffffff;
+      transition: 0.5s;
+    }
+
+    h1,h4 {
+      text-align: center;
+    }
+
+    .highlight {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+    </div>
+    <div>
+      <a class="nav-item" href="/home" id="home">
+        <h4>Home</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/about" class="nav-item" id="about">
+        <h4>About</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/resources" class="nav-item" id="resources">
+        <h4>Resources</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/contact" class="nav-item" id="contact">
+        <h4>Contact Us</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/disclaimer" class="nav-item" id="disclaimer">
+        <h4>Disclaimer</h4>
+      </a>
+    </div>
+  </div>
+
+  <h1>Brain Tumor Detection</h1>
+  <h4>Upload MRI Image of your Brain</h4><br>
+  <div class="container">
+    <form action="/bt" method="post" enctype="multipart/form-data" id="uploadForm">
+      <div class="upload-box" id="dropArea">
+        <p>Drag & Drop or</p>
+        <input type="file" id="fileInput" name="file" style="display: none;">
+        <button type="button" class="browse-button" id="browseButton">Browse</button>
+      </div>
+
+      <div class="filename-box" id="filenameBox">
+        No file selected
+      </div>
+      <button type="submit" class="upload-button">Predict</button>
+    </form>
+    <div id="bt-result"></div>
+    <h3>{{title}}</h3>
+  </div>
+
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const browseButton = document.getElementById('browseButton');
+    const uploadForm = document.getElementById('uploadForm');
+    const filenameBox = document.getElementById('filenameBox');
+    const dropArea = document.getElementById('dropArea');
+
+    browseButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      e.preventDefault();
+      const file = fileInput.files[0];
+      if (file) {
+        filenameBox.textContent = file.name;
+      }
+    });
+
+    dropArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropArea.style.border = '2px dashed #007BFF';
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+      dropArea.style.border = '2px dashed #ccc';
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropArea.style.border = '2px dashed #ccc';
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        filenameBox.textContent = files[0].name;
+      }
+    });
+  </script>
+
+</body>
+
+</html>

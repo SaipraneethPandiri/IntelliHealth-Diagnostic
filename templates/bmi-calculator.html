@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+    body,
+    button {
+      font-family: "Quicksand", sans-serif;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+    </div>
+    <div>
+      <a class="nav-item" href="/home" id="home">
+        <h4>Home</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/about" class="nav-item" id="about">
+        <h4>About</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/resources" class="nav-item" id="resources">
+        <h4>Resources</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/contact" class="nav-item" id="contact">
+        <h4>Contact Us</h4>
+      </a>
+    </div>
+    <div>
+      <a href="/disclaimer" class="nav-item" id="disclaimer">
+        <h4>Disclaimer</h4>
+      </a>
+    </div>
+  </div>
+
+  <div class="bmi-form-container">
+    <h1>BMI Calculator</h1>
+    <form id="bmiForm">
+      <div class="input-group">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Weight in kilograms" required>
+      </div>
+      <div class="input-group">
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" placeholder="Height in centimeters" required>
+      </div>
+      <div>
+        <button type="submit">Calculate BMI</button>
+      </div>
+    </form>
+    <div id="bmiResult"></div>
+  </div>
+
+  <script>
+    document.getElementById('bmiForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var weight = document.getElementById('weight').value;
+      var height = document.getElementById('height').value;
+
+      var bmi = calculateBMI(weight, height);
+      displayBMIResult(bmi);
+    });
+
+    function calculateBMI(weight, height) {
+      var heightInMeters = height / 100;
+      return (weight / (heightInMeters * heightInMeters)).toFixed(2);
+    }
+
+    function displayBMIResult(bmi) {
+      var result = document.getElementById('bmiResult');
+
+      result.textContent = `Your BMI is: ${bmi}`;
+    }
+  </script>
+</body>
+
+</html>

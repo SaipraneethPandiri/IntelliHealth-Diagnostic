@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Heart Disease</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+    body{
+      font-family: "Quicksand",sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+    </div> 
+    <div>
+      <a class="nav-item" href="/home"  id="home"><h4>Home</h4></a>
+    </div>
+    <div>
+    <a href="/about" class="nav-item" id="about"><h4>About</h4></a>
+  </div>
+  <div>
+    <a href="/resources" class="nav-item" id="resources"><h4>Resources</h4></a>
+  </div>
+  <div>
+    <a href="/contact" class="nav-item" id="contact"><h4>Contact Us</h4></a>
+  </div>
+  <div>
+    <a href="/disclaimer" class="nav-item" id="disclaimer"><h4>Disclaimer</h4></a>
+  </div>
+</div>
+
+  <h1>Heart Disease Prediction</h1>
+ <div id="frm">
+  <div>
+    <form id="heart-form" action="/hd" method="post">
+      
+      <div class="input-container"> 
+        <label for="age">Age:</label>
+        <input value="age"type="number" name="age"><br> 
+      </div>
+      
+      <div class="input-container"> 
+          <label   for="sex">Gender:</label>
+        <select class="dropdown" name="sex" id="gender">
+          <option value=1 >Male</option>
+          <option value=0>Female</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+          <label for="chestpain">chest pain type:</label>
+        <select class="dropdown" name="chestpain" id="cp">
+          <option value=0 >Typical Angina</option>
+          <option value=1>Atypical Angina</option>
+          <option value=2 >Non-Angina Pain</option>
+          <option value=3>Asymptomatic</option>
+        </select>
+      </div>
+      
+      <div class="input-container">
+        <label for="rbp">Resting BP:</label>
+        <input value="rbp" type="number" name="restingbp" ><br>
+      </div>
+      
+      <div class="input-container">
+        <label for="col">Cholestrol:</label>
+        <input value="col" type="number" name="chol"><br>
+      </div>
+      
+      <div class="input-container">
+          <label for="fastingbs">Fasting Blood Sugar:</label>
+        <select class="dropdown" name="fastingbs" id="fbs">
+          <option value=1 >True</option>
+          <option value=0 >False</option>
+        </select>
+      </div>
+    </div>
+      <div>
+      <div class="input-container">
+          <label for="rcg">Resting ECG:</label>
+        <select class="dropdown" name="rcg" id="recg">
+          <option value=0 >Normal</option>
+          <option value=1 >having ST-T wave abnormality</option>
+          <option value=2 >showing probable left ventricular hypertrophy</option>
+        </select>
+      </div>
+      
+      <div class="input-container">
+        <label for="mhr">Maximum Heart rate:</label>
+        <input value="mhr" type="number" name="maxhr" ><br>
+      </div>
+      
+      <div class="input-container">
+          <label for="ea">Excercise Angina:</label>
+        <select class="dropdown" name="ea" id="exa">
+          <option value=1 >Yes</option>
+          <option value=0 >No</option>
+        </select>
+      </div>
+      
+      <div class="input-container">
+        <label for="op">Old Peak:</label>
+        <input value="op" type="number" step="any" name="oldpeak" ><br>
+      </div>
+      
+      <div class="input-container">
+          <label for="slope">ST Slope :</label>
+        <select class="dropdown" name="slope" id="spe">
+          <option value=0 >Up sloping</option>
+          <option value=1 >Flat</option>
+          <option value=2 >Down Sloping</option>
+        </select>
+      </div>
+    </div>
+</div>
+      <div>
+        <input  type="submit" , value="Predict"><br>
+      </div>
+      
+    </form>
+
+<div id="Result"></div>
+<h3><br>{{title}}</h3>
+<h3> <a href="/disclaimer" target="_blank">Disclaimer</a> </h3>
+
+<script>
+  document.getElementById('heart-form').addEventListener('submit', function(event) {
+    var restingBP = document.getElementsByName('restingbp')[0].value;
+    var cholesterol = document.getElementsByName('chol')[0].value;
+    var maxHR = document.getElementsByName('maxhr')[0].value;
+    var oldPeak = document.getElementsByName('oldpeak')[0].value;
+    
+    if (restingBP < 94 || restingBP > 200 ||
+        cholesterol < 126 || cholesterol > 564 ||
+        maxHR < 71 || maxHR > 202 ||
+        oldPeak < 0 || oldPeak > 6.2) {
+      alert('One or more inputs are out of range. Please check and correct your inputs.');
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+</script>
+
+</body>
+</html>

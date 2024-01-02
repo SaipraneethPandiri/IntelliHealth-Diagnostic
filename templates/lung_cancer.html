@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lung Cancer</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+    body{
+      font-family: "Quicksand",sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+    </div> 
+    <div>
+      <a class="nav-item" href="/home"  id="home"><h4>Home</h4></a>
+    </div>
+    <div>
+    <a href="/about" class="nav-item" id="about"><h4>About</h4></a>
+  </div>
+  <div>
+    <a href="/resources" class="nav-item" id="resources"><h4>Resources</h4></a>
+  </div>
+  <div>
+    <a href="/contact" class="nav-item" id="contact"><h4>Contact Us</h4></a>
+  </div>
+  <div>
+    <a href="/disclaimer" class="nav-item" id="disclaimer"><h4>Disclaimer</h4></a>
+  </div>
+</div>
+
+  <h1>Lung Cancer Prediction</h1>
+  <div id="frm">
+    <div>
+      <form id="lung-form" action="/lc" method="post">
+        <div class="input-container">
+          <label for="gender">Gender:</label>
+          <select class="dropdown" name="gender" id="gender">
+            <option value=1>Male</option>
+            <option value=0>Female</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <input type="number" name="age" placeholder="Age"><br>
+        </div>
+        <div class="input-container">
+          <label for="smoking">Smoking:</label>
+          <select class="dropdown" name="smoking" id="smk">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <label for="yellowfing">Yellow Fingers:</label>
+          <select class="dropdown" name="yellowfing" id="yfing">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <label for="anxiety">Anxiety:</label>
+          <select class="dropdown" name="anxiety" id="anx">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <label for="pp">Peer Pressure:</label>
+          <select class="dropdown" name="pp" id="pp">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <label for="chronic">Chronic Disease:</label>
+          <select class="dropdown" name="chronic" id="chr">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+        </div>
+    </div>
+    <div>
+      <div class="input-container">
+        <label for="fatigue">Fatigue:</label>
+        <select class="dropdown" name="fatigue" id="fat">
+          <option value=1>Yes</option>
+          <option value=0>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="allergy">Allergy:</label>
+        <select class="dropdown" name="allergy" id="all">
+          <option value=1>Yes</option>
+          <option value=0>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="wheezing">Wheezing:</label>
+        <select class="dropdown" name="wheezing" id="whee">
+          <option value=1>Yes</option>
+          <option value=0>No</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label for="alcohol">Alcohol:</label>
+        <select class="dropdown" name="alcohol" id="alc">
+          <option value=1>Yes</option>
+          <option value=0>No</option>
+        </select>
+      </div>
+        <div class="input-container">
+          <label for="coughing">Coughing:</label>
+          <select class="dropdown" name="coughing" id="coug">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <label for="shortness">Shortness of Breath:</label>
+          <select class="dropdown" name="shortness" id="shor">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select></div>
+        <div class="input-container">
+          <label for="swalloing">Swallowing Difficulty:</label>
+          <select class="dropdown" name="swalloing" id="swal">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select></div>
+        <div class="input-container">
+          <label for="chestpain">Chest Pain:</label>
+          <select class="dropdown" name="chestpain" id="cp">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select></div>
+      </div>
+    </div>
+  </div>
+    <input type="submit" , value="Predict"><br>
+    </form>
+
+    <div id="Result"></div>
+    <h3>{{title}}</h3>
+    <h3> <a href="disclaimer.html" target="_blank">Disclaimer</a> </h3>
+
+</body>
+
+</html>

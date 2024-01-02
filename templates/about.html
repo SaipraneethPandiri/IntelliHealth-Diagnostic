@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Disease Prediction Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+        .content {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+
+        body {
+            font-family: "Quicksand", sans-serif;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+
+        .section {
+            opacity: 1;
+            transform: translateY(200px);
+            transition: opacity 2.0s ease-out, transform 1.0s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav-logo">
+            <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+        </div>
+        <div>
+            <a class="nav-item" href="/home" id="home">
+                <h4>Home</h4>
+            </a>
+        </div>
+        <div>
+            <a href="/about" class="nav-item" id="about">
+                <h4>About</h4>
+            </a>
+        </div>
+        <div>
+            <a href="/resources" class="nav-item" id="resources">
+                <h4>Resources</h4>
+            </a>
+        </div>
+        <div>
+            <a href="/contact" class="nav-item" id="contact">
+                <h4>Contact Us</h4>
+            </a>
+        </div>
+        <div>
+            <a href="/disclaimer" class="nav-item" id="disclaimer">
+                <h4>Disclaimer</h4>
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="section" id="project-overview">
+            <h2>Project Overview</h2>
+            <p>
+                Welcome to our Disease Prediction Project. This innovative initiative leverages advanced machine
+                learning models
+                to offer real-time predictions for four critical diseases: Brain Tumor, Lung Cancer, Diabetes, and Heart
+                Disease.
+                Developed using Flask and integrated into a dynamic website, our project aims to assist in early
+                detection and
+                efficient management of these health conditions. Each disease prediction model is meticulously crafted
+                to provide
+                accurate and timely insights, making this tool a valuable asset for both individuals and medical
+                professionals
+                seeking supplementary decision-making support.
+            </p>
+        </div>
+        <div class="section" id="mission-vision">
+            <h2>Mission and Vision</h2>
+            <p>
+                <strong>Mission:</strong> Our mission is to revolutionize the early detection and management of critical
+                diseases through cutting-edge predictive models. By harnessing the power of machine learning and data
+                analytics, we aim to provide reliable, timely, and accessible predictions that empower individuals and
+                healthcare professionals in making informed health decisions.
+            </p>
+            <p>
+                <strong>Vision:</strong> Our vision is to be a leading contributor in the field of digital health,
+                specifically in disease prediction. We aspire to continuously innovate and enhance our predictive
+                models, making significant strides in predictive healthcare and contributing to a future where
+                technology and medicine collaboratively work towards saving lives and improving health outcomes.
+            </p>
+        </div>
+
+        <div class="section" id="tech-details">
+            <h2>Technological Details</h2>
+            <p>Our project leverages advanced technologies and methodologies in machine learning and data science. We
+                employed a variety of algorithms to ensure accurate and reliable predictions. The datasets were
+                meticulously sourced from Kaggle, ensuring high-quality and comprehensive data.</p>
+
+            <!-- Technology Table -->
+            <table class="team-table">
+                <tr>
+                    <th>Disease Name</th>
+                    <th>Algorithm</th>
+                    <th>Accuracy</th>
+                </tr>
+                <tr>
+                    <td>Diabetes Prediction</td>
+                    <td>Random Forest</td>
+                    <td>88.9%</td>
+                </tr>
+                <tr>
+                    <td>Lung Cancer Prediction</td>
+                    <td>Random Forest</td>
+                    <td>95.6%</td>
+                </tr>
+                <tr>
+                    <td>Heart Disease Prediction</td>
+                    <td>Random Forest</td>
+                    <td>88.04%</td>
+                </tr>
+                <tr>
+                    <td>Brain Tumour Detection</td>
+                    <td>CNN</td>
+                    <td>86.4%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="section" id="tech-stack">
+            <table class="team-table">
+                <tr>
+                    <th colspan="4">Technology stack</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://simpleicons.org/icons/python.svg" alt="Python" style="height: 20px;"> Python
+                    </td>
+                    <td>
+                        <img src="https://simpleicons.org/icons/html5.svg" alt="HTML" style="height: 20px;"> HTML
+                    </td>
+                    <td>
+                        <img src="https://simpleicons.org/icons/css3.svg" alt="CSS" style="height: 20px;"> CSS
+                    </td>
+                    <td>
+                        <img src="https://simpleicons.org/icons/javascript.svg" alt="JavaScript" style="height: 20px;">
+                        JavaScript
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="section" id="team">
+            <table class="team-table">
+
+                <tr>
+                    <th colspan="3">Our Team</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="team-member">
+                            <img src="https://i.ibb.co/5x34pfp/pp-size-photo-new.jpg" alt="Member 1">
+                    </td>
+                    <td>
+                        <div class="member-info">
+                            <h3>Sai Praneeth P</h3>
+                            <p>Website Developer, Backend Engineer</p>
+                            <a href="https://www.linkedin.com/in/sai-praneethp/"target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+        </div>
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="team-member">
+                    <img src="https://i.ibb.co/mRGKXP7/chaitu.jpg" alt="Member 2">
+            </td>
+            <td>
+                <div class="member-info">
+                    <h3>Chaitanya Kumar V</h3>
+                    <p>Backend Engineer</p>
+                    <a href="https://www.linkedin.com/in/chaitanya-vutukuri/"target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+    </div>
+    </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="team-member">
+                <img src="https://i.ibb.co/gDm4Wb4/srujan.jpg" alt="Member 3">
+        </td>
+        <td>
+            <div class="member-info">
+                <h3>Srujan Kumar A</h3>
+                <p>Backend Engineer</p>
+                <a href="https://www.linkedin.com/in/srujan-kumar-247336248/"target="_blank"    ><i class="fab fa-linkedin"></i></a>
+            </div>
+            </div>
+        </td>
+    </tr>
+
+    </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 1.0 // Adjust if needed
+            });
+
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

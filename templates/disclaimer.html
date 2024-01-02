@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - Disease Prediction Project</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+        
+.disclaimer-container {
+    background-color: yellow;
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-radius: 10px;
+}
+
+.disclaimer-container h2 {
+    text-align: center;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width:100%;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-logo">
+          <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+        </div> 
+        <div>
+          <a class="nav-item" href="/home"  id="home"><h4>Home</h4></a>
+        </div>
+        <div>
+        <a href="/about" class="nav-item" id="about"><h4>About</h4></a>
+      </div>
+      <div>
+        <a href="/resources" class="nav-item" id="resources"><h4>Resources</h4></a>
+      </div>
+      <div>
+        <a href="/contact" class="nav-item" id="contact"><h4>Contact Us</h4></a>
+      </div>
+      <div>
+        <a href="#" class="nav-item" id="disclaimer"><h4>Disclaimer</h4></a>
+      </div>
+    </div>
+
+    <div class="disclaimer-container">
+        <h1>Disclaimer!</h1>
+        <p>
+          Please be aware that the predictions made by this project are based on a set of inputs and 
+          should not be considered as definitive medical diagnoses or advice. The accuracy of the predictions 
+          is contingent on the quality and completeness of the input data and the underlying algorithms. 
+          This tool is intended to be used as a supplementary aid and should not replace professional medical 
+          advice, diagnosis, or treatment.
+        </p>
+        <p>
+          Always seek the advice of your physician or other qualified health provider with any questions you may
+           have regarding a medical condition. Never disregard professional medical advice or delay in seeking it
+            because of something you have read or inferred from this project.
+        </p>
+        <p>
+          The developers of this project make no representations, guarantees, or warranties as to the accuracy, 
+          completeness, currency, suitability, or validity of any information provided by this tool and will not be 
+          liable for any errors, omissions, or delays in this information or any losses, injuries, or damages arising 
+          from its use.
+        </p>
+        <p>
+          This project is for educational purposes and part of an academic program. It is part of our final year bachelor's 
+          degree at VIT-AP University.
+        </p>
+    </div>
+</body>
+</html>

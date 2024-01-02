@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: "Quicksand", sans-serif;
+      place-items: center;
+      height: 100vh;
+      background-color: #FFFFFF;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin-block: 2rem;
+      gap: 2rem;
+    }
+
+    .nav-item {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+        <div class="nav-logo">
+          <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+        </div>
+        <div>
+          <a class="nav-item" href="#" id="home">
+            <h4>Home</h4>
+          </a>
+        </div>
+        <div>
+          <a href="/about" class="nav-item" id="about">
+            <h4>About</h4>
+          </a>
+        </div>
+        <div>
+          <a href="/resources" class="nav-item" id="resources">
+            <h4>Resources</h4>
+          </a>
+        </div>
+        <div>
+          <a href="/contact" class="nav-item" id="contact">
+            <h4>Contact Us</h4>
+          </a>
+        </div>
+        <div>
+          <a href="/disclaimer" class="nav-item" id="disclaimer">
+            <h4>Disclaimer</h4>
+          </a>
+        </div>
+  </div>
+
+  <div class="container">
+    <a href="/diabetes" class="card-link">
+      <div class="card">
+        <div class="card__header">
+          <img src="https://i.ibb.co/zH4SZJC/db1.jpg" alt="card__image" class="card__image" width="600">
+        </div>
+        <div class="card__body">
+          <h4>Diabetes prediction</h4>
+          <p>With just a few simple inputs, find out your risk of developing diabetes and take proactive steps towards a
+            healthier future.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/cancer" class="card-link">
+      <div class="card">
+        <div class="card__header">
+          <img src="https://i.ibb.co/tLCRs2y/lungs.jpg" alt="card__image" class="card__image" width="600">
+        </div>
+        <div class="card__body">
+          <h4>Lung Cancer Prediction</h4>
+          <p>Simple and fast, our tool assesses your likelihood of lung cancer, encouraging early diagnosis and
+            potentially life-saving treatment.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/heart_disease" class="card-link">
+      <div class="card">
+        <div class="card__header">
+          <img src="https://i.ibb.co/SwZN1bJ/heart.jpg" alt="card__image" class="card__image" width="600">
+        </div>
+        <div class="card__body">
+          <h4>Heart Disease Prediction</h4>
+          <p>Discover your heart disease risk easily through essential inputs, guiding you towards preventive health
+            measures and regular monitoring.</p>
+        </div>
+    </a>
+  </div>
+  
+  <a href="/brain_tumor" class="card-link">
+    <div class="card">
+      <div class="card__header">
+        <img src="https://i.ibb.co/1fVbQ98/Downloader-la-654e4746d87cb.jpg" alt="card__image" class="card__image"
+          width="600">
+      </div>
+      <div class="card__body">
+        <h4>Brain tumour Detection</h4>
+        <p>Effortlessly assess your risk of a brain tumor through a few key inputs, enabling early detection and
+          timely treatment.</p>
+      </div>
+    </div>
+  </a>
+
+
+
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IntelliHealth Diagnostics</title>
+  <link href="'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+    body{
+      font-family:"Quicksand", sans-serif;
+    }
+    .nav-item{
+      margin-top: 5px;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+    </div> 
+    <div>
+      <a class="nav-item" href="/home"  id="home"><h4>Home</h4></a>
+    </div>
+    <div>
+    <a href="/about" class="nav-item" id="about"><h4>About</h4></a>
+  </div>
+  <div>
+    <a href="/resources" class="nav-item" id="resources"><h4>Resources</h4></a>
+  </div>
+  <div>
+    <a href="/contact" class="nav-item" id="contact"><h4>Contact Us</h4></a>
+  </div>
+  <div>
+    <a href="/disclaimer" class="nav-item" id="disclaimer"><h4>Disclaimer</h4></a>
+  </div>
+</div>
+
+
+  <h1>Diabetes Prediction</h1>
+  <div  id="frm">
+    <div>
+      <form id="diabetes-form" action="/db" method="post">
+        <div class="input-container"> 
+          <input type="number" name="Pregnancies" placeholder="Pregnancies">
+         </div>
+        <div class="input-container"> <input type="number" name="Glucose" placeholder="Glucose"></div>
+        <div class="input-container"> <input type="number" name="BloodPressure" placeholder="Blood Pressure"></div>
+        <div class="input-container"> <input type="number" name="SkinThickness" placeholder="Skin Thickness"></div>
+    </div>
+    <div>
+      <div class="input-container"> <input type="number" name="Insulin" placeholder="Insulin"></div>
+      <div class="input-container"> 
+        <input type="number" step="any" name="BMI" placeholder="BMI">
+        <a class="info-text" href="/bmi" target="_blank">?</a>
+      </div>
+      <div class="input-container"> 
+        <input type="number" step="any" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function">
+        <a class="info-text" href="/dpf" target="_blank">?</a>
+      </div>
+      <div class="input-container"> <input type="number" name="Age" placeholder="Age"></div>
+    </div>
+  </div>
+  <div>
+    <input type="submit" , value="Predict">
+  </div>
+
+  </form>
+
+  <h3><br>{{title}}</h3>
+  <h3> <a href="/disclaimer" target="_blank">Disclaimer</a> </h3>
+
+  <script>
+    document.getElementById('diabetes-form').addEventListener('submit', function(event) {
+      var pregnancies = document.getElementsByName('Pregnancies')[0].value;
+      var glucose = document.getElementsByName('Glucose')[0].value;
+      var bloodPressure = document.getElementsByName('BloodPressure')[0].value;
+      var skinThickness = document.getElementsByName('SkinThickness')[0].value;
+      var insulin = document.getElementsByName('Insulin')[0].value;
+      var bmi = document.getElementsByName('BMI')[0].value;
+      var diabetesPedigreeFunction = document.getElementsByName('DiabetesPedigreeFunction')[0].value;
+      
+      if (pregnancies < 0 || pregnancies > 17 ||
+          glucose < 0 || glucose > 199 ||
+          bloodPressure < 0 || bloodPressure > 122 ||
+          skinThickness < 0 || skinThickness > 99 ||
+          insulin < 0 || insulin > 846 ||
+          bmi < 0 || bmi > 67.1 ||
+          diabetesPedigreeFunction < 0.08 || diabetesPedigreeFunction > 2.42) {
+        alert('One or more inputs are out of range. Please check and correct your inputs.');
+        event.preventDefault(); // Prevent form submission
+      }
+    });
+  </script>
+
+</body>
+
+</html>

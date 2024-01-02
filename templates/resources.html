@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Disease Prediction Project</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+    body{
+      font-family: "Quicksand",sans-serif;
+    }
+    h4{
+      text-align: center;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-logo">
+          <img src="https://i.ibb.co/4mCMLQW/health-care-colution-page-0001-1.jpg" alt="logo">
+        </div> 
+        <div>
+          <a class="nav-item" href="/home"  id="home"><h4>Home</h4></a>
+        </div>
+        <div>
+        <a href="/about" class="nav-item" id="about"><h4>About</h4></a>
+      </div>
+      <div>
+        <a href="#" class="nav-item" id="resources"><h4>Resources</h4></a>
+      </div>
+      <div>
+        <a href="/contact" class="nav-item" id="contact"><h4>Contact Us</h4></a>
+      </div>
+      <div>
+        <a href="/disclaimer" class="nav-item" id="disclaimer"><h4>Disclaimer</h4></a>
+      </div>
+    </div>
+
+
+    <div class="ctnt">
+
+        <div class="resource-section">
+            <h2>Diabetes</h2>
+            <h4>An infographic on Diabetes</h4>
+            <img src="https://i.ibb.co/Sn3K8RB/diabetes-infographics.jpg" alt="Diabetes Infographics" class="infographic">
+            <p>Source: <a href="https://www.who.int"target="_blank">World Health Organization</a></p>
+            <p>Want to know more about diabetes? <a href="https://www.niddk.nih.gov/health-information/diabetes/overview/symptoms-causes"target="_blank">Read here</a></p>
+            <p>Dataset used for our model: <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database"target="_blank">Kaggle Dataset</a></p>
+            <!-- <p>Find out a Research Paper: <a href="https://www.sciencedirect.com/science/article/pii/S1877050920300557">ScienceDirect</a></p> -->
+            <p>Healthcare Professional Directory: <a href="https://www.practo.com/hyderabad/diabetologist"target="_blank">Practo</a></p>
+        </div>
+
+        <div class="resource-section">
+            <h2>Brain Tumor</h2>
+            <h4>An infographic on Brain Tumor</h4>
+            <img src="https://i.ibb.co/gFf1bfT/Infographics-Brain-Tumor.jpg" alt="Brain Tumour Infographics" class="infographic">
+            <p>Source: <a href="https://www.narayanahealth.org"target="_blank">Narayana Health</a></p>
+            <p>Want to know more about brain tumours? <a href="https://www.healthdirect.gov.au/brain-cancer"target="_blank">Read here</a></p>
+            <p>Dataset used for our model: <a href="https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection"target="_blank">Kaggle Dataset</a></p>
+            <!-- <p>Research Paper: <a href="https://www.sciencedirect.com/science/article/pii/S277252862200022X">ScienceDirect</a></p> -->
+            <p>Healthcare Professional Directory: <a href="https://www.mayoclinic.org/diseases-conditions/brain-tumor/doctors-departments/ddc-20350091"target="_blank">Mayo Clinic</a></p>
+        </div>
+
+
+        <div class="resource-section">
+            <h2>Lung Cancer</h2>
+            <h4>An infographic on Lung Cancer</h4>
+            <img src="https://i.ibb.co/ZHWhkXb/lung-cancer-infographic-2017.jpg" alt="Lung Cancer Infographics" class="infographic">
+            <p>Source: <a href="https://stanfordhealthcare.org" target="_blank">Stanford Health Care</a></p>
+            <p>Want to know more about lung cancer? <a href="https://www.who.int/news-room/fact-sheets/detail/lung-cancer" target="_blank">Read here</a></p>
+            <p>Dataset used for our model: <a href="https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer"target="_blank">Kaggle Dataset</a></p>
+            <!-- <p>Research Paper: <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0276703">PLOS ONE</a></p> -->
+            <p>Healthcare Professional Directory: <a href="https://www.practo.com/hyderabad/doctors-for-lung-cancer"target="_blank">practo</a></p>
+        </div>
+
+        <div class="resource-section">
+            <h2>Heart Disease</h2>
+            <h4>An infographic on Heart Disease</h4>
+            <img src="https://i.ibb.co/C9pXzkm/heart-disease-stats-cropped.jpg" alt="Heart Disease Infographics" class="infographic">
+            <p>Source: <a href="https://www.belmarrahealth.com"target="_blank">Bel Marra Health</a></p>
+            <p>Want to know more about heart disease? <a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/symptoms-causes/syc-20353118"target="_blank">Read here</a></p>
+            <p>Dataset used for our model: <a href="https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset"target="_blank">Kaggle Dataset</a></p>
+            <p>Healthcare Professional Directory: <a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/doctors-departments/ddc-20353127"target="_blank">Mayo Clinic</a></p>
+        </div>
+    </div>
+</body>
+</html>
